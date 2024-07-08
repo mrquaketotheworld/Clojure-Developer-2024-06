@@ -5,4 +5,14 @@
   (let [test-string-clean (-> test-string
                               (string/replace #"\W" "")
                               string/lower-case)]
-    (= test-string-clean (string/reverse test-string-clean))))
+    (loop [start 0
+           end (dec (count test-string-clean))]
+      (if (= start (-> test-string
+                       count
+                       (/ 2)
+                       double
+                       Math/floor
+                       int))
+        true
+        (if (= (get test-string-clean start) (get test-string-clean end))
+          (recur (inc start) (dec end)) false)))))

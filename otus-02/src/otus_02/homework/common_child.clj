@@ -1,5 +1,5 @@
-(ns otus-02.homework.common-child
-  (:require [clojure.string :as string]))
+(ns otus-02.homework.common-child)
+
 
 ;; Строка называется потомком другой строки,
 ;; если она может быть образована путем удаления 0 или более символов из другой строки.
@@ -15,11 +15,8 @@
 
 ;; Еще пример HARRY и SALLY. Ответ будет - 2, так как общий элемент у них AY
 
-(defn common-child-length [first-string second-string]
-  (loop [char-set #{}
-         xs first-string]
-    (if (not-empty xs)
-      (if (string/index-of second-string (get xs 0))
-        (recur (conj char-set (get xs 0)) (subs xs 1))
-        (recur char-set (subs xs 1)))
-      (count char-set))))
+
+(defn common-child-length [first-string second-string])
+
+
+
